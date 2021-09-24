@@ -10,7 +10,7 @@ namespace TxRecord.Models
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Transaction> Category { get; set; }
         public DbSet<Transaction> Transaction { get; set; }
+        public DbSet<Category> Category { get; set; }
     }
 }

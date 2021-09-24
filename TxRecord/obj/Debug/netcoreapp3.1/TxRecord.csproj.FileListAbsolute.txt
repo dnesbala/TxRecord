@@ -80,3 +80,5 @@ D:\C#\TxRecord\TxRecord\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.De
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.csproj.CoreCompileInputs.cache
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.MvcApplicationPartsAssemblyInfo.cache
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\Add.cshtml.g.cs
+D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Add.cshtml.g.cs
+D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
