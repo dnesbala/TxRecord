@@ -1,0 +1,27 @@
+﻿@model TxRecord.Models.Transaction
+
+@{
+    ViewData["Title"] = "Add Transaction";
+}
+
+<div class="container">
+    <form method="POST" asp-action="Add">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" id="category" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" id="image" class="form-control-file" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Transaction</button>
+    </form>
+</div>

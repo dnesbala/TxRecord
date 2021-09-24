@@ -79,3 +79,4 @@ D:\C#\TxRecord\TxRecord\bin\Debug\netcoreapp3.1\Humanizer.dll
 D:\C#\TxRecord\TxRecord\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.csproj.CoreCompileInputs.cache
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.MvcApplicationPartsAssemblyInfo.cache
+D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\Add.cshtml.g.cs
