@@ -21,7 +21,7 @@ namespace TxRecord.Controllers
             return View(_db.Category);
         }
 
-        [HttpGet] 
+        [HttpGet]
         public IActionResult Add()
         {
             return View();
@@ -31,13 +31,66 @@ namespace TxRecord.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Add(Category category)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-            _db.Category.Add(category);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+                _db.Category.Add(category);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
             }
             return View(category);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int? Id)
+        {
+            if (Id == null || Id == 0)
+            {
+                return NotFound();
+            }
+            var category = _db.Category.Find(Id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Category category)
+        {
+            _db.Category.Update(category);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int? Id)
+        {
+            if (Id == null || Id==0)
+            {
+                return NotFound();
+            }
+            var category = _db.Category.Find(Id);
+            if(category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteCategory(int? Id)
+        {
+            var category = _db.Category.Find(Id);
+            if(category == null)
+            {
+                return NotFound();
+            }
+            _db.Category.Remove(category);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

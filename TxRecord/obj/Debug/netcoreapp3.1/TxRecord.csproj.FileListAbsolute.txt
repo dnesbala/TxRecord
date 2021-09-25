@@ -82,3 +82,5 @@ D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.MvcApplicationPartsAsse
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\Add.cshtml.g.cs
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Add.cshtml.g.cs
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
+D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Edit.cshtml.g.cs
+D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Delete.cshtml.g.cs

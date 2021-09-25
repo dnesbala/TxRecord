@@ -28,12 +28,13 @@
                     <tr>
                         <td>@obj.Name</td>
                         <td>
-                            <a asp-controller="CategoryController" asp-action="Edit" class="btn btn-sm btn-secondary">Edit</a>
-                            <a asp-controller="CategoryController" asp-action="Delete" class="btn btn-sm btn-danger">Delete</a>
+                            <a asp-route-Id = "@obj.Id" asp-controller="Category" asp-action="Edit" class="btn btn-sm btn-secondary">Edit</a>
+                            <a asp-route-Id = "@obj.Id" asp-controller="Category" asp-action="Delete" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>
                 }
             }
         </tbody>
     </table>
+
 </div>
