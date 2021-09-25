@@ -18,10 +18,10 @@ namespace TxRecord.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_db.Category);
         }
 
-        [HttpGet]
+        [HttpGet] 
         public IActionResult Add()
         {
             return View();
