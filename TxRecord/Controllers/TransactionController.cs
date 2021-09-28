@@ -1,14 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using TxRecord.Models;
 
 namespace TxRecord.Controllers
 {
     public class TransactionController : Controller
     {
+        private readonly ApplicationDbContext _db;
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
+        public TransactionController(ApplicationDbContext db, IWebHostEnvironment hostEnvironment)
+        {
+            _db = db;
+            _webHostEnvironment = hostEnvironment;
+        }
+
+
         public IActionResult Index()
         {
             return View();
@@ -22,13 +35,53 @@ namespace TxRecord.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            IEnumerable<SelectListItem> CategoryDropdown = _db.Category.Select(cat => new SelectListItem
+            {
+                Text = cat.Name,
+                Value = cat.Id.ToString(),
+            });
+            ViewBag.CategoryDropdown = CategoryDropdown;
             return View();
         }
 
         [HttpPost]
-        public IActionResult Add(Transaction Tx) 
+        public IActionResult Add(Transaction Tx)
         {
-            return View(Tx);
+            if (ModelState.IsValid)
+            {
+                //var files = HttpContext.Request.Form.Files;
+                //string webRootPath = _webHostEnvironment.WebRootPath;
+                //string uploadPath = webRootPath + WC.ImagePath;
+                ////string uploadPath = Path.Combine(webRootPath, "images");
+                //string fileName = Guid.NewGuid().ToString();
+                //string extension = Path.GetExtension(files[0].FileName);
+
+                //using (var fileStream = new FileStream(Path.Combine(uploadPath, fileName + extension), FileMode.Create))
+                //{
+                //    files[0].CopyTo(fileStream);
+                //}
+
+                //Tx.Image = fileName + extension;
+                //_db.Transaction.Add(Tx);
+                //_db.SaveChanges();
+
+                var files = HttpContext.Request.Form.Files;
+                string webRootPath = _webHostEnvironment.WebRootPath;
+                string uploadPath = webRootPath + WC.ImagePath;
+                string fileName = Guid.NewGuid().ToString();
+                string extension = Path.GetExtension(files[0].FileName);
+
+                using (var fileStream = new FileStream(Path.Combine(uploadPath, fileName + extension), FileMode.Create))
+                {
+                    files[0].CopyTo(fileStream);
+                }
+
+                Tx.Image = fileName + extension;
+                _db.Transaction.Add(Tx);
+                _db.SaveChanges();
+                 
+            }
+            return RedirectToAction("Index");
         }
     }
 }

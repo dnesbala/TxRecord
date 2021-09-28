@@ -31,7 +31,8 @@ namespace TxRecord.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Add(Category category)
         {
-            if (ModelState.IsValid)
+            var count = _db.Category.Where(cat => cat.Name == category.Name).Count();
+            if (count == 0 && ModelState.IsValid)
             {
                 _db.Category.Add(category);
                 _db.SaveChanges();

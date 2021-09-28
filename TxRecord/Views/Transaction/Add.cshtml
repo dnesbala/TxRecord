@@ -2,25 +2,32 @@
 
 @{
     ViewData["Title"] = "Add Transaction";
+    var categories = ViewBag.CategoryDropdown;
 }
 
 <div class="container">
-    <form method="POST" asp-action="Add">
+    <form method="POST" asp-action="Add" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly"></div>
         <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" id="title" class="form-control" />
+            <label asp-for="Title">Title</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label for="price">Price</label>
-            <input type="number" id="price" class="form-control" />
+            <label asp-for="Price">Price</label>
+            <input type="number" asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label for="category">Category</label>
-            <input type="text" id="category" class="form-control" />
+            <label asp-for="CategoryId">Category</label>
+            <select asp-for="CategoryId" asp-items="@categories" class="form-control">
+                <option selected disabled>--Select Category--</option>
+            </select>
         </div>
         <div class="form-group">
-            <label for="image">Image</label>
-            <input type="file" id="image" class="form-control-file" />
+            <label asp-for="Image">Image</label>
+            <input asp-for="Image" type="file" name="files" accept="image/*" class="form-control-file" />
+            <span asp-validation-for="Image" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary">Add Transaction</button>
     </form>

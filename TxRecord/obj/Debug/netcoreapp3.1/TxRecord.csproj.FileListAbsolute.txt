@@ -9,7 +9,6 @@ D:\C#\TxRecord\TxRecord\bin\Debug\netcoreapp3.1\TxRecord.dll
 D:\C#\TxRecord\TxRecord\bin\Debug\netcoreapp3.1\TxRecord.pdb
 D:\C#\TxRecord\TxRecord\bin\Debug\netcoreapp3.1\TxRecord.Views.dll
 D:\C#\TxRecord\TxRecord\bin\Debug\netcoreapp3.1\TxRecord.Views.pdb
-D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.csprojAssemblyReference.cache
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.AssemblyInfoInputs.cache
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.AssemblyInfo.cs
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.RazorAssemblyInfo.cache
@@ -84,3 +83,4 @@ D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Add.cshtml.
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Edit.cshtml.g.cs
 D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\Razor\Views\Category\Delete.cshtml.g.cs
+D:\C#\TxRecord\TxRecord\obj\Debug\netcoreapp3.1\TxRecord.csprojAssemblyReference.cache
