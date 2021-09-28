@@ -7,6 +7,6 @@ namespace TxRecord
 {
     public static class WC
     {
-        public static string ImagePath = @"\images\products\";
+        public static string ImagePath = @"\images\transactions\";
     }
 }

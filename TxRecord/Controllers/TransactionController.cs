@@ -24,7 +24,7 @@ namespace TxRecord.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_db.Transaction);
         }
 
         public IActionResult Insight()
@@ -49,21 +49,8 @@ namespace TxRecord.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var files = HttpContext.Request.Form.Files;
-                //string webRootPath = _webHostEnvironment.WebRootPath;
-                //string uploadPath = webRootPath + WC.ImagePath;
-                ////string uploadPath = Path.Combine(webRootPath, "images");
-                //string fileName = Guid.NewGuid().ToString();
-                //string extension = Path.GetExtension(files[0].FileName);
-
-                //using (var fileStream = new FileStream(Path.Combine(uploadPath, fileName + extension), FileMode.Create))
-                //{
-                //    files[0].CopyTo(fileStream);
-                //}
-
-                //Tx.Image = fileName + extension;
-                //_db.Transaction.Add(Tx);
-                //_db.SaveChanges();
+                if(Tx.Image != null)
+                {
 
                 var files = HttpContext.Request.Form.Files;
                 string webRootPath = _webHostEnvironment.WebRootPath;
@@ -77,6 +64,8 @@ namespace TxRecord.Controllers
                 }
 
                 Tx.Image = fileName + extension;
+                }
+                Tx.DateAdded = DateTime.Now;
                 _db.Transaction.Add(Tx);
                 _db.SaveChanges();
                  
